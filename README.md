@@ -6,6 +6,6 @@
 | 分野 | 使用技術 |
 | ---- | ---- |
 | サーバーレス | AWS Lambda, API Gateway |
-| その他 | AWS SAM |
+| その他 | AWS SAM, black, flake8 |
 
 ## アーキテクチャ
