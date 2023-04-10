@@ -19,3 +19,4 @@ jobs:
     - name: Run mypy test
       run: |
         pipenv run mypy .
+        pipenv run pytest
