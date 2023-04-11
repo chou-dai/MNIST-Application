@@ -7,6 +7,8 @@
     - black, isort によるコードの自動整形
     - flake8, mypy, pytest のテストを使用した GitHub Actions による CI
 
+---
+
 ## 技術スタック
 | 分野 | 使用技術 |
 | ---- | ---- |
@@ -15,6 +17,8 @@
 | AWSリソース | Lambda, API Gateway, CloudFormation, S3, IAM |
 | 自動整形 | black, isort |
 | テスト | flake8, mypy, pytest |
+
+---
 
 ## 環境構築
 #### AWS CLI, AWS SAM CLI のインストール
@@ -34,6 +38,8 @@ pip install pipenv
 ```
 pipenv run install --dev
 ```
+
+---
 
 ## SAM プロジェクト デプロイ手順
 #### AWS アクセスキー設定
@@ -60,7 +66,9 @@ pipenv run install --dev
 - エンドポイント確認
     - マネジメントコンソール > API Gateway > {名前} > ステージ > {パス} > URL
 
-## ローカル実行（Docker 起動後）
+---
+
+## SAM プロジェクト ローカル実行（Docker 起動後）
 #### SAM ビルド
 ```
 sam build -u
@@ -75,7 +83,9 @@ sam local start-api
 ```
 http://127.0.0.1:3000/hello
 
-## コードの自動整形、テスト
+---
+
+## コードの自動整形・テスト
 #### 自動整形
 - black ： PEP8（Pythonのコードスタイル）に準拠したコードフォーマット
     ```
@@ -85,8 +95,12 @@ http://127.0.0.1:3000/hello
     ```
     pipenv run isort .
     ```
+- 上記、自動整形を同時に実行するコマンド（独自定義済み）
+    ```
+    pipenv run format
+    ```
 #### テスト（CIで行われるテスト）
-- flake8 ： Pythonコードの静的解析テスト
+- flake8 ： Python コードの静的解析テスト
     ```
     pipenv run flake8 .
     ```
@@ -97,4 +111,8 @@ http://127.0.0.1:3000/hello
 - pytest ： Lambda 関数のユニットテスト（tests/ ディレクトリのテスト）
     ```
     pipenv run pytest .
+    ```
+- 上記、テストを同時に実行するコマンド（独自定義済み）
+    ```
+    pipenv run test
     ```
