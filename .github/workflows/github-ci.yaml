@@ -18,5 +18,6 @@ jobs:
         pipenv install --dev
     - name: Run mypy test
       run: |
+        pipenv run flake8 .
         pipenv run mypy .
         pipenv run pytest
