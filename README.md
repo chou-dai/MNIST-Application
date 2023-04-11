@@ -17,7 +17,7 @@
 | テスト | flake8, mypy, pytest |
 
 ## 環境構築
-- AWS CLI, AWS SAM CLI のインストール
+#### AWS CLI, AWS SAM CLI のインストール
 ```
 brew tap aws/tap
 brew install aws-sam-cli
