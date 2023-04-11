@@ -6,7 +6,7 @@ from aws_lambda_powertools.utilities.data_classes import (APIGatewayProxyEvent,
 from aws_lambda_powertools.utilities.typing import LambdaContext
 
 
-@event_source(data_class=APIGatewayProxyEvent)
+@event_source(data_class=APIGatewayProxyEvent)  # type: ignore
 def lambda_handler(
     event: APIGatewayProxyEvent, context: LambdaContext
 ) -> dict[str, Any]:
