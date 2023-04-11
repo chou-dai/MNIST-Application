@@ -1,11 +1,8 @@
-# Antipode-LINE-Bot
+# AWS SAM Base
 ## 概要
-対蹠地（地球の裏側の地点）を返信するLINE Bot
+AWS SAM(Serverless Application Model)のベース
 
 ## 技術スタック
 | 分野 | 使用技術 |
 | ---- | ---- |
-| サーバーレス | AWS Lambda, API Gateway |
-| その他 | AWS SAM, black, flake8 |
-
-## アーキテクチャ
+| AWS | Lambda, API Gateway, CloudFormation |
