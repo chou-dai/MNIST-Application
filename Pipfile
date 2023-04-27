@@ -16,6 +16,8 @@ boto3-stubs = "*"
 types-requests = "*"
 black = "*"
 isort = "*"
+torch = "*"
+torchvision = "*"
 
 [requires]
 python_version = "3.9"
