@@ -1,38 +1,41 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
-Description: >
-  sam-app
-
-  Sample SAM Template for sam-app
 
 Globals:
   Function:
-    Timeout: 3
-    MemorySize: 128
+    Timeout: 50
+    MemorySize: 1024
+  Api:
+    BinaryMediaTypes:
+      - image/png
+      - image/jpg
+      - image/jpeg
 
 Resources:
-  HelloWorldFunction:
+  MNISTFunction:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: src/hello_world/
-      Handler: app.lambda_handler
-      Runtime: python3.9
+      PackageType: Image
       Architectures:
         - x86_64
       Events:
-        HelloWorld:
+        Inference:
           Type: Api
           Properties:
-            Path: /hello
+            Path: /mnist
             Method: get
+    Metadata:
+      Dockerfile: Dockerfile
+      DockerContext: ./src/mnist
+      DockerTag: python3.9-v1
 
 Outputs:
-  HelloWorldApi:
-    Description: "API Gateway endpoint URL for Prod stage for Hello World function"
-    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/hello/"
-  HelloWorldFunction:
-    Description: "Hello World Lambda Function ARN"
-    Value: !GetAtt HelloWorldFunction.Arn
-  HelloWorldFunctionIamRole:
-    Description: "Implicit IAM Role created for Hello World function"
-    Value: !GetAtt HelloWorldFunctionRole.Arn
+  InferenceApi:
+    Description: "API Gateway endpoint URL for Prod stage for Inference function"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/mnist/"
+  MNISTFunction:
+    Description: "Inference Lambda Function ARN"
+    Value: !GetAtt MNISTFunction.Arn
+  MNISTFunctionIamRole:
+    Description: "Implicit IAM Role created for Inference function"
+    Value: !GetAtt MNISTFunctionRole.Arn

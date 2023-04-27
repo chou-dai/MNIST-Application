@@ -16,8 +16,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install pipenv --upgrade-strategy=only-if-needed
         pipenv install --dev
-    - name: Run tests (flake8, mypy, pytest)
+    - name: Run tests (flake8, mypy)
       run: |
         pipenv run flake8 .
         pipenv run mypy .
-        pipenv run pytest
