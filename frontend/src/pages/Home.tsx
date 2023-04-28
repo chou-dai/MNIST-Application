@@ -1,17 +1,24 @@
 import React, { FC } from "react";
+import { Header } from "../components";
+import SignatureCanvas from "react-signature-canvas";
 
 const Home: FC = () => {
     return (
-        <div className="App">
-            <header className="App-header">
-                <p className="text-red-500">
-                    Edit <code className=" text-yellow-400">src/App.tsx</code> and savfsdae to reload.
-                </p>
-                <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-                    Learn React
-                </a>
-            </header>
-        </div>
+        <>
+            <Header />
+            <div className=" p-10">
+                <header className="App-header">
+                    <SignatureCanvas
+                        minWidth={8}
+                        maxWidth={8}
+                        penColor="black"
+                        throttle={30}
+                        backgroundColor="white"
+                        canvasProps={{ width: 500, height: 400, className: "sigCanvas" }}
+                    />
+                </header>
+            </div>
+        </>
     );
 };
 
