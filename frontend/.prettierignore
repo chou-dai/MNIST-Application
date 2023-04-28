@@ -1,0 +1,15 @@
+node_modules
+.vscode/*
+*.yml
+build
+dist
+dist-ssr
+*.local
+logs
+*.log
+.DS_Store
+src/styles/*
+*.json
+.prettierrc
+*.css
+*.html
