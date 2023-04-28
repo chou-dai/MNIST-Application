@@ -3,7 +3,7 @@ name: test
 on: push
 
 jobs:
-  MypyTest:
+  PythonTest:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
@@ -13,10 +13,12 @@ jobs:
         python-version: 3.9
     - name: Install pipenv and dependencies
       run: |
+        cd backend
         python -m pip install --upgrade pip
         pip install pipenv --upgrade-strategy=only-if-needed
         pipenv install --dev
     - name: Run tests (flake8, mypy)
       run: |
+        cd backend
         pipenv run flake8 .
         pipenv run mypy .
