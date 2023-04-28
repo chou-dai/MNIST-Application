@@ -1,22 +1,18 @@
-import React, { FC } from "react";
-import { Header } from "../components";
-import SignatureCanvas from "react-signature-canvas";
+import React, { useEffect, useState } from "react";
+import { Canvas, Header } from "../components";
 
-const Home: FC = () => {
+const Home = () => {
+    const [InputData, setInputData] = useState("");
+
+    useEffect(() => {
+        console.log(InputData);
+    }, [InputData]);
+
     return (
         <>
             <Header />
             <div className=" p-10">
-                <header className="App-header">
-                    <SignatureCanvas
-                        minWidth={8}
-                        maxWidth={8}
-                        penColor="black"
-                        throttle={30}
-                        backgroundColor="white"
-                        canvasProps={{ width: 500, height: 400, className: "sigCanvas" }}
-                    />
-                </header>
+                <Canvas setState={setInputData} />
             </div>
         </>
     );
