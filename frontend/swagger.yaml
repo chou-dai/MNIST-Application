@@ -1,0 +1,29 @@
+swagger: "2.0"
+info:
+  version: "1.0"
+  title: "MNIST"
+tags:
+  - name: "MNIST-Controller"
+
+paths:
+  /mnist:
+    get:
+      tags:
+        - "MNIST-Controller"
+      summary: "getMNISTProbability"
+      operationId: "getMNISTProbability"
+      responses:
+        200:
+          description: "OK"
+          schema:
+            $ref: "#/definitions/MNISTProbabilityResponse"
+
+definitions:
+  MNISTProbabilityResponse:
+    type: "object"
+    properties:
+      probability_list:
+        type: "array"
+        items:
+          type: "number"
+          format: "float"
