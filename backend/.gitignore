@@ -376,3 +376,5 @@ samconfig.toml
 */build/*
 
 # End of https://www.gitignore.io/api/osx,linux,python,windows,pycharm,visualstudiocode
+
+local_env.json

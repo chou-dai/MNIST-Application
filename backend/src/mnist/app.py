@@ -66,14 +66,20 @@ def lambda_handler(
 
     probabilities = model.forward(
         image_transforms(np.array(image)).reshape(-1, 1, 28, 28)
-    )
-    label = torch.argmax(probabilities).item()
+    )[0]
+    probability_list = probabilities.tolist()
+    # label = torch.argmax(probabilities).item()
 
     return {
         "statusCode": 200,
+        "headers": {
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Headers": "Content-Type",
+            "Access-Control-Allow-Methods": "OPTIONS,POST,GET",
+        },
         "body": json.dumps(
             {
-                "predicted_label": label,
+                "probability_list": probability_list,
             }
         ),
     }
