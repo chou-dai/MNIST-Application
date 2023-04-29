@@ -1,19 +1,28 @@
-import React from "react";
-import "../styles/App.css";
+import React, { useEffect, useState } from "react";
+import { Canvas, Chart, Header } from "../components";
+import ForwardIcon from "@mui/icons-material/Forward";
 
-function Home() {
+const Home = () => {
+    const [InputData, setInputData] = useState("");
+
+    useEffect(() => {
+        console.log(InputData);
+    }, [InputData]);
+
     return (
-        <div className="App">
-            <header className="App-header">
-                <p>
-                    Edit <code>src/App.tsx</code> and save to reload.
-                </p>
-                <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-                    Learn React
-                </a>
-            </header>
-        </div>
+        <>
+            <Header />
+            <div className="p-10 flex justify-between max-w-[1000px] mx-auto sm:flex-row flex-col">
+                <Canvas className="sm:w-[40%] w-full" setState={setInputData} />
+                <div className="sm:w-[18%] w-full flex items-center">
+                    <ForwardIcon />
+                </div>
+                <div className="sm:w-[40%] w-full">
+                    <Chart />
+                </div>
+            </div>
+        </>
     );
-}
+};
 
 export default Home;
