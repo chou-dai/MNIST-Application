@@ -1,11 +1,11 @@
 import json
+import os
 from typing import Any
 
 import numpy as np
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-import os
 import torchvision
 from aws_lambda_powertools.utilities.data_classes import (APIGatewayProxyEvent,
                                                           event_source)
@@ -75,8 +75,8 @@ def lambda_handler(
         "statusCode": 200,
         "headers": {
             "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Headers" : "Content-Type",
-            "Access-Control-Allow-Methods": "OPTIONS,POST,GET"
+            "Access-Control-Allow-Headers": "Content-Type",
+            "Access-Control-Allow-Methods": "OPTIONS,POST,GET",
         },
         "body": json.dumps(
             {
