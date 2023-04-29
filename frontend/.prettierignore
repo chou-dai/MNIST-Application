@@ -13,3 +13,4 @@ src/styles/*
 .prettierrc
 *.css
 *.html
+*.yaml

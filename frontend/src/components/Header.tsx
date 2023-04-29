@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 
-const Header: FC = () => {
+const Header = () => {
     const title = "MNIST App";
 
     return (

@@ -1,76 +1,50 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { IgrPieChart } from "igniteui-react-charts";
 
+// const initialData = [...Array(10).keys()].map(i => ({
+//     value: 10,
+//     category: i,
+//     summary: `${i}: 10%`
+// }));
 
-const data = [
+const initialData = [
     {
         value: 10,
-        category: "0",
-        summary: "0: 10%"
-    },
-    {
-        value: 10,
-        category: "1",
-        summary: "1: 10%"
-    },
-    {
-        value: 10,
-        category: "2",
-        summary: "2: 10%"
-    },
-    {
-        value: 10,
-        category: "3",
-        summary: "3: 10%"
-    },
-    {
-        value: 10,
-        category: "4",
-        summary: "4: 10%"
-    },
-    {
-        value: 10,
-        category: "5",
-        summary: "5: 10%"
-    },
-    {
-        value: 10,
-        category: "6",
-        summary: "6: 10%"
-    },
-    {
-        value: 10,
-        category: "7",
-        summary: "7: 10%"
-    },
-    {
-        value: 10,
-        category: "8",
-        summary: "8: 10%"
-    },
-    {
-        value: 10,
-        category: "9",
-        summary: "9: 10%"
+        category: 1,
+        summary: "割 合"
     }
 ];
 
-const Chart = () => {
+type Props = {
+    dataList: Array<number>;
+};
+
+const Chart = (props: Props) => {
+    const { dataList } = props;
+    const [chartData, setChartData] = useState(initialData);
+
+    useEffect(() => {
+        if (!dataList.length) return;
+        const FormattedDataList = dataList.map((data, index) => ({
+            value: data * 100,
+            category: index,
+            summary: `${index}: ${(data * 100).toFixed(1)}%`
+        }));
+        setChartData(FormattedDataList);
+    }, [dataList]);
 
     return (
-        <div className="h-96 w-96">
-        <IgrPieChart
-            
-            innerExtent="50"
-            // ref={this.chartRef}
-            legendLabelMemberPath="category"
-            labelMemberPath="summary"
-            labelsPosition="BestFit"
-            valueMemberPath="value"
-            radiusFactor="0.7"
-            dataSource={data}
-            // legend={this.legend}
-        />
+        <div className="h-96 w-96 relative">
+            <IgrPieChart
+                innerExtent="50"
+                legendLabelMemberPath="category"
+                labelMemberPath="summary"
+                labelsPosition="BestFit"
+                valueMemberPath="value"
+                radiusFactor="0.7"
+                dataSource={chartData}
+            />
+            <div className="absolute w-full h-full top-0 left-0" />
         </div>
     );
 };
