@@ -3,11 +3,12 @@ import { MutableRefObject } from "react";
 import ReactSignatureCanvas from "react-signature-canvas";
 
 type Props = {
+    className: string;
     setState: Dispatch<SetStateAction<string>>;
 };
 
 const Canvas = (props: Props) => {
-    const { setState } = props;
+    const { className, setState } = props;
     const ref = useRef() as MutableRefObject<ReactSignatureCanvas>;
 
     const changeRef = () => {
@@ -20,7 +21,7 @@ const Canvas = (props: Props) => {
     };
 
     return (
-        <div className="relative">
+        <div className={`relative ${className}`}>
             <ReactSignatureCanvas
                 ref={ref}
                 minWidth={8}
@@ -28,7 +29,7 @@ const Canvas = (props: Props) => {
                 onEnd={changeRef}
                 penColor="black"
                 backgroundColor="white"
-                canvasProps={{ width: 500, height: 400, className: "sigCanvas" }}
+                canvasProps={{ className: "w-full aspect-square" }}
             />
             <button onClick={clearCanvas}>リセット</button>
         </div>
