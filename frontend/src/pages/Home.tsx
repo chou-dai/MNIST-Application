@@ -5,6 +5,7 @@ import { mnistApi } from "../api/clientWrapper";
 
 const Home = () => {
     const [InputData, setInputData] = useState("");
+    const [data, setData] = useState(false);
 
     useEffect(() => {
         console.log(InputData);
@@ -14,6 +15,7 @@ const Home = () => {
         mnistApi.getMNISTProbability()
             .then(res => {
                 console.log(res.data.probability_list);
+                setData(true);
             });
     };
 
@@ -28,6 +30,7 @@ const Home = () => {
                 <div className="sm:w-[40%] w-full">
                     <Chart />
                     <button onClick={getMNIST}>取得</button>
+                    <p className="text-white">{data ? "OK" : "NG"}</p>
                 </div>
             </div>
         </>
