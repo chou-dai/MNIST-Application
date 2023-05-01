@@ -10,6 +10,10 @@ Globals:
       - image/png
       - image/jpg
       - image/jpeg
+    Cors:
+      AllowMethods: "'OPTIONS,POST,GET'"
+      AllowHeaders: "'Content-Type'"
+      AllowOrigin: "'*'"
 
 Resources:
   MNISTFunction:
@@ -23,7 +27,7 @@ Resources:
           Type: Api
           Properties:
             Path: /mnist
-            Method: get
+            Method: post
     Metadata:
       Dockerfile: Dockerfile
       DockerContext: ./src/mnist

@@ -27,8 +27,8 @@ const Canvas = (props: Props) => {
                 minWidth={8}
                 maxWidth={8}
                 onEnd={changeRef}
-                penColor="black"
-                backgroundColor="white"
+                penColor="white"
+                backgroundColor="black"
                 canvasProps={{ className: "w-full aspect-square" }}
             />
             <button onClick={clearCanvas}>リセット</button>
