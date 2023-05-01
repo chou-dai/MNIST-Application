@@ -7,11 +7,20 @@ tags:
 
 paths:
   /mnist:
-    get:
+    post:
       tags:
         - "MNIST-Controller"
       summary: "getMNISTProbability"
       operationId: "getMNISTProbability"
+      consumes:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "requestBody"
+        description: "requestBody"
+        required: true
+        schema:
+          $ref: "#/definitions/MNISTImageRequestBody"
       responses:
         200:
           description: "OK"
@@ -19,6 +28,13 @@ paths:
             $ref: "#/definitions/MNISTProbabilityResponse"
 
 definitions:
+  MNISTImageRequestBody:
+    type: "object"
+    properties:
+      imageBase64:
+        type: "string"
+    required:
+      - imageBase64
   MNISTProbabilityResponse:
     type: "object"
     properties:
@@ -27,3 +43,5 @@ definitions:
         items:
           type: "number"
           format: "float"
+    required:
+      -  probability_list

@@ -1,3 +1,5 @@
+import base64
+import io
 import json
 from typing import Any
 
@@ -59,16 +61,15 @@ model.eval()
 def lambda_handler(
     event: APIGatewayProxyEvent, context: LambdaContext
 ) -> dict[str, Any]:
-    # image_bytes = event['body'].encode('utf-8')
-    # image = Image.open(BytesIO(base64.b64decode(image_bytes))).convert(mode='L')
-    image = Image.open("image.jpeg").convert(mode="L")
+    body = json.loads(event.body)
+    image_bytes = body["imageBase64"].encode("utf-8")
+    image = Image.open(io.BytesIO(base64.b64decode(image_bytes))).convert(mode="L")
     image = image.resize((28, 28))
 
     probabilities = model.forward(
         image_transforms(np.array(image)).reshape(-1, 1, 28, 28)
     )[0]
     probability_list = probabilities.tolist()
-    # label = torch.argmax(probabilities).item()
 
     return {
         "statusCode": 200,

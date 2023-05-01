@@ -1,17 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Canvas, Chart, Header } from "../components";
 import { mnistApi } from "../api/clientWrapper";
+import { MNISTImageRequestBody } from "../api/api";
 
 const Home = () => {
-    const [InputData, setInputData] = useState("");
+    const [inputData, setInputData] = useState("");
     const [data, setData] = useState<Array<number>>([]);
 
-    useEffect(() => {
-        console.log(InputData);
-    }, [InputData]);
-
     const getMNIST = () => {
-        mnistApi.getMNISTProbability().then((res) => {
+        const requestBody: MNISTImageRequestBody = {
+            imageBase64: inputData.split(",")[1]
+        };
+        mnistApi.getMNISTProbability(requestBody).then((res) => {
             setData(res.data.probability_list as Array<number>);
         });
     };
