@@ -10,7 +10,9 @@ const ArrowButton = (props: Props) => {
     const { className, isDisable, onClick } = props;
 
     return (
-        <div className={`relative ${className} w-full flex items-center justify-center flex-col arrow-shadow sm:p-0 p-4 pt-8`}>
+        <div
+            className={`relative ${className} w-full flex items-center justify-center flex-col arrow-shadow sm:p-0 p-4 pt-8`}
+        >
             <button
                 onClick={onClick}
                 disabled={isDisable}
