@@ -1,19 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { IgrPieChart } from "igniteui-react-charts";
 
-// const initialData = [...Array(10).keys()].map((i) => ({
-//     value: 10,
-//     category: i,
-//     summary: `${i}: 10%`
-// }));
-
-const initialData = [
-    {
-        value: 1,
-        category: 1,
-        summary: "割 合"
-    }
-];
+const initialData = [...Array(10).keys()].map((i) => ({
+    value: 10,
+    category: i,
+    summary: `${i}: 10.0%`
+}));
 
 type Props = {
     dataList: Array<number>;
@@ -22,6 +14,7 @@ type Props = {
 const Chart = (props: Props) => {
     const { dataList } = props;
     const [chartData, setChartData] = useState(initialData);
+    const chartBgColor = "#2563eb #9333ea #a21caf #9f1239 #b45309 #ca8a04 #4d7c0f #16a34a #0d9488 #0ea5e9";
 
     useEffect(() => {
         if (!dataList.length) return;
@@ -48,6 +41,8 @@ const Chart = (props: Props) => {
                 height="100%"
                 labelInnerColor="white"
                 labelOuterColor="white"
+                brushes={chartBgColor}
+                outlines="#a1a1aa"
             />
             <div className="absolute w-[56%] aspect-square bg-[rgba(0,0,0,0.1)] text-white rounded-full top-[22%] left-[22%] flex justify-center items-center z-[-1]">
                 {dataList.length ? (

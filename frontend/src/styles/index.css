@@ -61,7 +61,7 @@ table {
 	clip-path: polygon(1% 36%, 51% 36%, 51% 20%, 98% 50%, 51% 80%, 51% 64%, 1% 64%);
 }
 .arrow-shadow {
-	filter: drop-shadow(0 0 0.4rem rgba(0,0,0,0.7));
+	filter: drop-shadow(6px 6px 0.4rem rgba(0,0,0,0.4));
 }
 .chart-shadow {
 	filter: drop-shadow(0 0 1rem rgba(0,0,0,0.4));

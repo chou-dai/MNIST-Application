@@ -23,7 +23,7 @@ const Home = () => {
     return (
         <>
             <Header />
-            <div className="p-10 py-36 flex justify-between max-w-[1000px] mx-auto sm:flex-row flex-col">
+            <div className="sm:px-10 px-16 sm:py-36 py-10 flex justify-between max-w-[1000px] mx-auto sm:flex-row flex-col">
                 <Canvas className="sm:w-[36%] w-full" setState={setInputData} />
                 <ArrowButton className="sm:w-[18%] w-full" isDisable={!inputData} onClick={getMNIST} />
                 <div className="sm:w-[36%] w-full">
