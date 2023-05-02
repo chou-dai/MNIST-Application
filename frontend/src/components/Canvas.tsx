@@ -29,9 +29,12 @@ const Canvas = (props: Props) => {
                 onEnd={changeRef}
                 penColor="white"
                 backgroundColor="black"
-                canvasProps={{ className: "w-full aspect-square" }}
+                canvasProps={{ className: "w-full aspect-square border-solid border-[1px] border-gray-400" }}
             />
-            <button onClick={clearCanvas}>リセット</button>
+            <button className="absolute bottom-1 left-1 text-gray-300 text-sm hover:opacity-60" onClick={clearCanvas}>
+                リセット
+            </button>
+            <p className="absolute top-full w-full pt-[2px] text-center text-gray-200 text-sm">0~9の数字を入力</p>
         </div>
     );
 };
