@@ -14,6 +14,7 @@ from aws_lambda_powertools.utilities.typing import LambdaContext
 from PIL import Image
 from torch import Tensor
 
+# 画像の名処理を行う関数の定義
 image_transforms = torchvision.transforms.Compose(
     [
         torchvision.transforms.ToTensor(),
@@ -22,8 +23,9 @@ image_transforms = torchvision.transforms.Compose(
 )
 
 
+# ニューラルネットワークの定義
 class Net(nn.Module):
-    def __init__(self):
+    def __init__(self) -> None:
         super(Net, self).__init__()
         self.conv1 = nn.Conv2d(1, 6, 5)
         self.pool1 = nn.MaxPool2d(2, 2)
@@ -33,30 +35,35 @@ class Net(nn.Module):
         self.fc2 = nn.Linear(120, 84)
         self.fc3 = nn.Linear(84, 10)
 
-    def forward(self, x):
+    def forward(self, x: Tensor) -> Tensor:
         x = self.pool1(torch.relu(self.conv1(x)))
         x = self.pool2(torch.relu(self.conv2(x)))
         x = x.view(-1, 16 * 4 * 4)
         x = torch.relu(self.fc1(x))
         x = torch.relu(self.fc2(x))
         x = self.fc3(x)
-        return F.softmax(x, dim=-1)
+        x = torch.softmax(x, dim=1)
+        return x
 
 
-@event_source(data_class=APIGatewayProxyEvent)  # type: ignore
+@event_source(data_class=APIGatewayProxyEvent)
 def lambda_handler(
     event: APIGatewayProxyEvent, context: LambdaContext
 ) -> dict[str, Any]:
     body = json.loads(event.body)
+
     image_bytes = body["imageBase64"].encode("utf-8")
+    # 画像データをデコードして読み込み
     image = Image.open(io.BytesIO(base64.b64decode(image_bytes))).convert(mode="L")
     image = image.resize((28, 28))
 
     model_file = "/opt/ml/model"
     model = Net()
     model.load_state_dict(torch.load(model_file))
+    # モデルを評価モードで使用
     model.eval()
 
+    # 順伝播で画像が0~9の確率の推論を行う
     probabilities = model.forward(
         image_transforms(np.array(image)).reshape(-1, 1, 28, 28)
     )[0]
