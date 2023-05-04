@@ -22,3 +22,4 @@ CNN
 
 
 ## アーキテクチャ
+![architecture](https://user-images.githubusercontent.com/89395132/236269753-fb6e96ef-ed4e-430c-a3f0-a910ef58aac7.png)
