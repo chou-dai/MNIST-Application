@@ -12,7 +12,7 @@
 | 分野 | 使用技術 |
 | ---- | ---- |
 | フロントエンド | React(Typescript), Tailwind CSS |
-| バックエンド | Lambda(Python), API Gateway |
+| バックエンド | Lambda(Python), API Gateway, ECR |
 | モデル構築 | Pytorch |
 | その他 | Neural Network, AWS SAM, Docker |
 
