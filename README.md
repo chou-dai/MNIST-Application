@@ -8,6 +8,8 @@
 ![preview](https://user-images.githubusercontent.com/89395132/236490902-24b4fadb-0f02-4b90-8328-d821a9a9b909.png)
 
 
+---
+
 ## 技術スタック
 | 分野 | 使用技術 |
 | ---- | ---- |
@@ -17,12 +19,18 @@
 | その他 | AWS SAM, Docker |
 
 
-## MNISTモデル
-- (畳み込み層 + Maxプーリング層) × 2 + 全結合層 × 3
-- 各レイヤーのニューロンにおける活性化関数は ReLU 関数を用い、最終レイヤーでは Softmax 関数を用いる。
-- 損失関数はクロスエントロピー損失関数、最適化アルゴリズムは SGD を用いる。
+---
 
-![architecture](https://user-images.githubusercontent.com/89395132/236506173-6b3f5226-c174-4d2c-b682-ac432472f9d3.png)
+
+## MNISTモデル
+![model](https://user-images.githubusercontent.com/89395132/236506173-6b3f5226-c174-4d2c-b682-ac432472f9d3.png)
+- (畳み込み層 + Maxプーリング層) × 2 + 全結合層 × 3
+- 活性化関数：最終層 Softmax 関数、それ以外 ReLU 関数。
+- 損失関数：クロスエントロピー損失関数
+- 最適化アルゴリズム：SGD
+
+
+---
 
 
 ## アーキテクチャ
