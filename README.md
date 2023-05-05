@@ -18,7 +18,7 @@
 
 
 ## MNISTモデル
-CNN
+<img width="1012" alt="image" src="https://user-images.githubusercontent.com/89395132/236502858-47777cae-bbd8-4236-bf08-6c5971433392.png">
 
 
 ## アーキテクチャ
