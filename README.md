@@ -22,7 +22,7 @@
 - 各レイヤーのニューロンにおける活性化関数は ReLU 関数を用い、最終レイヤーでは Softmax 関数を用いる。
 - 損失関数はクロスエントロピー損失関数、最適化アルゴリズムは SGD を用いる。
 
-![model](https://user-images.githubusercontent.com/89395132/236503151-15499f5e-ef32-44dd-a695-ae8329b2a5c7.png)
+![architecture](https://user-images.githubusercontent.com/89395132/236506173-6b3f5226-c174-4d2c-b682-ac432472f9d3.png)
 
 
 ## アーキテクチャ
