@@ -6,6 +6,8 @@
 - フロントエンドは React 、バックエンドは AWS サーバレスアーキテクチャ（API Gateway、ECR、Lambda）で構成している。
 - Pytorch による CNN モデル構築を行なっている。
 - https://mnist-application.vercel.app
+<img width="1428" alt="image" src="https://user-images.githubusercontent.com/89395132/236490902-24b4fadb-0f02-4b90-8328-d821a9a9b909.png">
+
 
 
 ## 技術スタック
@@ -22,4 +24,5 @@ CNN
 
 
 ## アーキテクチャ
-![architecture](https://user-images.githubusercontent.com/89395132/236269753-fb6e96ef-ed4e-430c-a3f0-a910ef58aac7.png)
+![architecture](https://user-images.githubusercontent.com/89395132/236492743-c13131f7-437d-42ad-9c8d-0482399f4570.png)
+
