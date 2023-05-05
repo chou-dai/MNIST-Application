@@ -22,5 +22,5 @@
 
 
 ## アーキテクチャ
-![architecture](https://user-images.githubusercontent.com/89395132/236492743-c13131f7-437d-42ad-9c8d-0482399f4570.png)
+![image](https://user-images.githubusercontent.com/89395132/236503556-c9d8a25c-5948-4737-b531-b0b98f0baab8.png)
 
