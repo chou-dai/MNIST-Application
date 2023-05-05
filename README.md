@@ -18,7 +18,7 @@
 
 
 ## MNISTモデル
-<img width="1012" alt="image" src="https://user-images.githubusercontent.com/89395132/236502858-47777cae-bbd8-4236-bf08-6c5971433392.png">
+<img width="711" alt="image" src="https://user-images.githubusercontent.com/89395132/236503151-15499f5e-ef32-44dd-a695-ae8329b2a5c7.png">
 
 
 ## アーキテクチャ
