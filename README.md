@@ -4,6 +4,7 @@
 - MNIST：手書き数字の識別アプリ。
 - CNN ニューラルネットワークで構築されたモデルにより "0" から "9" の手書き文字の推論を行う。
 - モデル構築には Pytorch を使用し、フロントエンドは React、バックエンドは AWS サーバレスアーキテクチャで構成。
+
 ![preview](https://user-images.githubusercontent.com/89395132/236490902-24b4fadb-0f02-4b90-8328-d821a9a9b909.png)
 
 
