@@ -34,7 +34,7 @@ const Canvas = (props: Props) => {
             <button className="absolute bottom-1 left-1 text-gray-300 text-sm hover:opacity-60" onClick={clearCanvas}>
                 リセット
             </button>
-            <p className="absolute top-full w-full pt-[2px] text-center text-gray-200 text-sm">0~9の数字を入力</p>
+            <p className="absolute top-full w-full pt-[2px] text-center text-zinc-700 text-sm">0~9の数字を入力</p>
         </div>
     );
 };

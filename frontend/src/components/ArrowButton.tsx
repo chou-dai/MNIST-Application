@@ -17,7 +17,7 @@ const ArrowButton = (props: Props) => {
                 onClick={onClick}
                 disabled={isDisable}
                 className={`${
-                    isDisable && "opacity-40 cursor-not-allowed"
+                    isDisable && "opacity-50 cursor-not-allowed"
                 } arrow-outer flex items-center justify-center sm:w-full w-[40%] aspect-square bg-zinc-400 sm:rotate-0 rotate-90 sm:scale-100 scale-y-[2]`}
             >
                 <div
