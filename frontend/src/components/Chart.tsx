@@ -40,11 +40,11 @@ const Chart = (props: Props) => {
                 width="100%"
                 height="100%"
                 labelInnerColor="white"
-                labelOuterColor="white"
+                labelOuterColor="black"
                 brushes={chartBgColor}
                 outlines="#a1a1aa"
             />
-            <div className="absolute w-[56%] aspect-square bg-[rgba(0,0,0,0.1)] text-white rounded-full top-[22%] left-[22%] flex justify-center items-center z-[-1]">
+            <div className="absolute w-[56%] aspect-square bg-[rgba(0,0,0,0.8)] text-white rounded-full top-[22%] left-[22%] flex justify-center items-center z-[-1]">
                 {dataList.length ? (
                     <p className="text-7xl font-bold font-mono">{dataList.indexOf(Math.max(...dataList))}</p>
                 ) : (
