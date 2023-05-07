@@ -5,7 +5,7 @@
 - CNN ニューラルネットワークで構築されたモデルにより "0" から "9" の手書き文字の推論を行う。
 - モデル構築には Pytorch を使用し、フロントエンドは React、バックエンドは AWS サーバレスアーキテクチャで構成。
 
-![preview](https://user-images.githubusercontent.com/89395132/236490902-24b4fadb-0f02-4b90-8328-d821a9a9b909.png)
+![preview](https://user-images.githubusercontent.com/89395132/236676449-17dabd7a-6ce1-4fe1-b250-c41e5d8e98b2.png)
 
 
 ---
