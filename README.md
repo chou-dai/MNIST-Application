@@ -2,7 +2,7 @@
 
 ## 概要
 - MNIST：手書き数字の識別アプリ。
-- CNN ニューラルネットワークで構築されたモデルにより "0" から "9" の手書き文字の推論を行う。
+- CNN で構築されたモデルにより "0" から "9" の手書き文字の推論を行う。
 - モデル構築には Pytorch を使用し、フロントエンドは React、バックエンドは AWS サーバレスアーキテクチャで構成。
 
 ![preview](https://user-images.githubusercontent.com/89395132/236676449-17dabd7a-6ce1-4fe1-b250-c41e5d8e98b2.png)
@@ -22,7 +22,7 @@
 ---
 
 
-## MNISTモデル
+## CNN モデル
 ![model](https://user-images.githubusercontent.com/89395132/236506173-6b3f5226-c174-4d2c-b682-ac432472f9d3.png)
 - (畳み込み層 + Maxプーリング層) × 2 + 全結合層 × 3
 - 活性化関数：最終層 Softmax 関数、それ以外 ReLU 関数。
