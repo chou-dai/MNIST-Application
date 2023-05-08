@@ -3,7 +3,7 @@
 ## 概要
 - MNIST：手書き数字の識別アプリ。
 - CNN で構築されたモデルにより "0" から "9" の手書き文字の推論を行う。
-- モデル構築には Pytorch を使用し、フロントエンドは React、バックエンドは AWS サーバレスアーキテクチャで構成。
+- モデル構築には PyTorch を使用し、フロントエンドは React、バックエンドは AWS サーバレスアーキテクチャで構成。
 
 ![preview](https://user-images.githubusercontent.com/89395132/236676449-17dabd7a-6ce1-4fe1-b250-c41e5d8e98b2.png)
 
@@ -15,7 +15,7 @@
 | ---- | ---- |
 | フロントエンド | React(Typescript), Tailwind CSS |
 | バックエンド | Lambda(Python), API Gateway, ECR |
-| モデル構築 | Pytorch |
+| モデル構築 | PyTorch |
 | その他 | AWS SAM, Docker |
 
 
